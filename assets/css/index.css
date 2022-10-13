@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Fredoka One";
+}
+
+body {
+  overflow: hidden;
+}
+
+.sessao-header {
+  background-color: #413f3f;
+  color: #fff;
+  width: 100%;
+  height: 15rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sessao-header .players-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sessao-header .players-container .players input {
+  outline: none;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 200ms ease-in;
+}
+.sessao-header .players-container .players input:focus {
+  background-color: #b6b6b6;
+}
+.sessao-header .players-container .start {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  transition: 200ms ease-in;
+}
+.sessao-header .players-container .start:hover {
+  transform: scale(1.1);
+  background-color: rgb(200, 53, 82);
+  color: #fff;
+  border: solid 2px #fff;
+}
+
+.sessao-main {
+  height: 50rem;
+  width: 100%;
+  background-color: #262631;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sessao-main .sessao-tabuleiro {
+  background-color: #232323;
+  display: grid;
+  grid-template-columns: 6rem 6rem 6rem;
+  grid-template-rows: 6rem 6rem 6rem;
+  gap: 0.5rem;
+  max-width: 19rem;
+}
+.sessao-main .sessao-tabuleiro span {
+  background-color: #ddd;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  font-size: 5rem;
+}
+.sessao-main .sessao-tabuleiro span.win {
+  background-color: #25a340;
+}
+
+/*# sourceMappingURL=index.css.map */
