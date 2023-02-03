@@ -1,84 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
-$font-fredoka:"Fredoka One";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$font-poppins:"Poppins";
 
 *{
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-  font-family: $font-fredoka;
-}
-
-body{
-  overflow: hidden;
+  font-family: $font-poppins;
+  color: #fff;
 }
 
 .sessao-header{
-  background-color:#413f3f;
-  color: #fff;
-  width: 100%;
-  height: 15rem;
-  gap: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
+  background-color: #5757b1;
 
-  .players-container{
+  .title-section{
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    position: relative;
+
+    &::before{
+      position: absolute;
+      content: "";
+      width: 8rem;
+      height: .2rem;
+      bottom: 0;
+    }
+  }
+
+  .players-container-wrapper{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    gap: .5rem;
+    margin-top: 2rem;
 
-    .players{
-    
-      input{
-        outline:none;
-        padding:.5rem;
-        border:none;
-        border-radius: .4rem;
-        transition: 200ms ease-in;
+    .players-container{
+      display: flex;
+      gap: 2rem;
 
-        &:focus{
-          background-color:#b6b6b6;
+      .players{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        label{
+          font-size: 40px;
+        }
+
+        input{
+          font-size: 20px;
+          color: #000;
+          outline: none;
+          padding: 1rem;
+          border: none;
+          border-radius: .4rem;
         }
       }
     }
-    .start{
-      cursor: pointer;
-      border: none;
-      border-radius: .4rem;
-      color: rgb(0, 0, 0);
-      padding: .5rem;
-      background-color:rgb(255, 255, 255);
-      transition: 200ms ease-in;
 
-      &:hover{
-        transform: scale(1.1);
-        background-color: rgb(200, 53, 82);
+    .group-player{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+
+      .start{
+        margin-top: 2rem;
+        border: none;
+        width: 15rem;
+        padding: 1rem;
         color: #fff;
-        border: solid 2px #fff;
+        font-weight: bolder;
+        border-radius: .4rem;
+        cursor: pointer;
+        background-color: #25a340;
+        transition: all .4s ease;
+        
+        &:hover{
+          background-color: #fff;
+          color:#25a340;
+          border: solid 1px #25a340;
+        }
+      }
+
+      h2 span{
+        color: #000000;
       }
     }
   }
 }
+
+
+
 .sessao-main{
   height: 50rem;
   width: 100%;
-  background-color:#262631;
+  background-color:#5757b1;
   display:flex;
   align-items: center;
   justify-content: center;
 
   .sessao-tabuleiro{
-    background-color: #232323;
     display: grid;
-    grid-template-columns: 6rem 6rem 6rem;
-    grid-template-rows: 6rem 6rem 6rem;
+    grid-template-columns: 10rem 10rem 10rem;
+    grid-template-rows: 10rem 10rem 10rem;
     gap: .5rem;
     max-width:19rem;
-    
+    place-content: center;
+
     span{
-      background-color:#ddd;
+      background-color:#000000;
       cursor: pointer;
       display: grid;
       place-content: center;
@@ -87,6 +118,58 @@ body{
   
     span.win{
       background-color:#25a340;
+    }
+  }
+}
+
+
+@media(max-width:700px){
+  .sessao-header{
+    .players-container-wrapper{
+      .players-container{
+        flex-direction: column;
+        .players{
+          width: 100%;
+
+          input{
+            width:100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:500px){
+  .sessao-header{
+    .title-section{
+      font-size: 15px;
+    }
+    .players-container-wrapper{
+      .players-container{
+        .players{
+          label{
+            font-size: 15px;
+          }
+          input{
+            font-size: 15px;
+            width: 7rem;
+          }
+        }
+      }
+      .group-player{
+        font-size: 15px;
+        button{
+          width: 80%;
+        }
+      }
+    }
+  }
+  .sessao-main{
+    overflow: hidden;
+    .sessao-tabuleiro{
+      grid-template-columns:4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-// Variáveis globais 
+
 const boardRegions = document.querySelectorAll('.sessao-tabuleiro span')
 let vBoard = []
 let turnPlayer = ''
@@ -65,7 +65,7 @@ function handleBoardClick(ev) {
   const rowColumnPair = region.split('.')
   const row = rowColumnPair[0]
   const column = rowColumnPair[1]
-  // Marca a região clicada com o símbolo do jogador
+
   if (turnPlayer === 'player1') {
     span.innerText = 'X'
     vBoard[row][column] = 'X'
@@ -76,9 +76,9 @@ function handleBoardClick(ev) {
  
   console.clear()
   console.table(vBoard)
-  // Desabilita a região clicada
+  
   disableRegion(span)
-  // Verifica se alguém venceu
+ 
   const winRegions = getWinRegions()
   if (winRegions.length > 0) {
     handleWin(winRegions)
